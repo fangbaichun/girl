@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: Spring-Boot-Admin
+server:
+  port: 8769
+# 注册到eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
+  instance:
+    prefer-ip-address: true
+#actuator暴露所有信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@

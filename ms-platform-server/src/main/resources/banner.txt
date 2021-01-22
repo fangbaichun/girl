@@ -1,0 +1,28 @@
+
+      ___                       ___           ___
+     /\  \          ___        /\  \         /\__\
+    /::\  \        /\  \      /::\  \       /:/  /
+   /:/\:\  \       \:\  \    /:/\:\  \     /:/  /
+  /:/  \:\  \      /::\__\  /::\~\:\  \   /:/  /
+ /:/__/_\:\__\  __/:/\/__/ /:/\:\ \:\__\ /:/__/
+ \:\  /\ \/__/ /\/:/  /    \/_|::\/:/  / \:\  \
+  \:\ \:\__\   \::/__/        |:|::/  /   \:\  \
+   \:\/:/  /    \:\__\        |:|\/__/     \:\  \
+    \::/  /      \/__/        |:|  |        \:\__\
+     \/__/                     \|__|         \/__/
+
+
+Welcome to Girl
+---------------------------------------------------------------
+Service Name:  [${spring.application.name}]
+Service IP:    [${clientIP}]
+Service Port:  [${server.port}]
+PID:           [${pid}]
+APP ID:        [${app.id}]
+
+Girl Version:  [1.0.0]
+Boot Version:  [2.1.7.RELEASE]
+Cloud Version: [Greenwich.SR5]
+
+Girl Code:     [https://github.com/fangbaichun/girl]
+Girl Wiki:     [https://github.com/fangbaichun/girl]

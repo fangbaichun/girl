@@ -1,0 +1,48 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Api-Spring-Gateway
+  cloud:
+    gateway:
+      routes:
+      - id: my_route
+        predicates:
+        - Path=/customer/**
+        uri: lb://CUSTOMER
+        filters:
+#        - StripPrefix: 1
+CUSTOMER:
+  ribbon:
+#   配置负载均衡策略为随机访问
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#eureka注册
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.128:8761/eureka/,http://192.168.1.129:8761/eureka/
+    # 开启健康检查
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
+    # 续约更新时间间隔 (默认30秒)
+    lease-renewal-interval-in-seconds: 3
+    # 续约到期时间（默认90秒）
+    lease-expiration-duration-in-seconds: 9
+# actuator健康检查
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@

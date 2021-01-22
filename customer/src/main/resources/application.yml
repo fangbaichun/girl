@@ -1,0 +1,26 @@
+app:
+  id: customer
+# set apollo meta server address, adjust to actual address if necessary
+apollo:
+  meta: http://192.168.1.128:8080/
+  bootstrap:
+      enabled: true
+      namespaces: application
+server:
+  port: 30001
+spring:
+  application:
+    name: customer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.128:8080/eureka/
+  instance:
+    prefer-ip-address: true
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
