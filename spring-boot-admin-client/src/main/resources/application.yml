@@ -4,9 +4,16 @@ spring:
   boot:
       admin:
         client:
-          url: http://localhost:8769
+          url: http://10.19.83.64:8769
+# 注册到eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.19.83.64:8761/eureka/,http://10.19.83.64:8762/eureka/
+  instance:
+    prefer-ip-address: true
 server:
-  port: 8768
+  port: 30001
 management:
   endpoints:
     web:

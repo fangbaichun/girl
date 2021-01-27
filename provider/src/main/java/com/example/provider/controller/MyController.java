@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/provider")
 public class MyController {
 
-    private String datasource;
+    private String datasource ="bbb";
 
     @GetMapping("/bbb")
     public String bbb() {
-        Config config = ConfigService.getConfig("application");
-        this.datasource = config.getProperty("datasource",null);
+//        Config config = ConfigService.getConfig("application");
+//        this.datasource = config.getProperty("datasource",null);
         return datasource;
     }
 }

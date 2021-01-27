@@ -1,13 +1,13 @@
 spring:
   application:
-    name: Spring-Boot-Admin
+    name: spring-boot-admin
 server:
   port: 8769
 # 注册到eureka
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
+      defaultZone: http://10.19.83.64:8761/eureka/,http://10.19.83.64:8762/eureka/
   instance:
     prefer-ip-address: true
 #actuator暴露所有信息

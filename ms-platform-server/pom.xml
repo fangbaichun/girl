@@ -8,7 +8,6 @@
         <version>1.0.0</version>
     </parent>
     <artifactId>ms-platform-server</artifactId>
-    <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
@@ -69,16 +68,4 @@
             </exclusions>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <executable>true</executable>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

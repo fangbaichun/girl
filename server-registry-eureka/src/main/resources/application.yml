@@ -12,12 +12,12 @@ server:
 eureka:
   client:
     # 是否将自己注册到eureka
-    register-with-eureka: false
+     register-with-eureka: false
     # 是否从eureka中获取注册列表
-    fetch-registry: false
+     fetch-registry: false
     # 服务连接地址
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
+  service-url:
+    defaultZone: http://10.19.83.64:8761/eureka/,http://10.19.83.64:8762/eureka/
   instance:
     # 服务列表中显示IP地址
     prefer-ip-address: true
@@ -34,12 +34,12 @@ server:
 eureka:
   client:
     # 是否将自己注册到eureka
-    register-with-eureka: false
+     register-with-eureka: false
     # 是否从eureka中获取注册列表
-    fetch-registry: false
+     fetch-registry: false
     # 服务连接地址
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/,http://127.0.0.1:8762/eureka/
+  service-url:
+    defaultZone: http://10.19.83.64:8761/eureka/,http://10.19.83.64:8762/eureka/
   instance:
     # 服务列表中显示IP地址
     prefer-ip-address: true

@@ -1,22 +1,26 @@
 app:
   id: 123456789
 # set apollo meta server address, adjust to actual address if necessary
-apollo:
-  meta: http://192.168.1.128:8080/
-  bootstrap:
-      enabled: true
-      namespaces: application
+#apollo:
+#  meta: http://192.168.1.128:8080/
+#  bootstrap:
+#      enabled: true
+#      namespaces: application
 # 服务器配置
 server:
-  port: 33001
+  port: 30002
 # Spring相关配置
 spring:
   application:
     name: provider
+  boot:
+    admin:
+      client:
+        url: http://10.19.83.64:8769
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.1.128:8080/eureka/
+      defaultZone: http://10.19.83.64:8761/eureka/,http://10.19.83.64:8762/eureka/
   instance:
     prefer-ip-address: true
 info:

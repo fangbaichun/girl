@@ -1,7 +1,7 @@
 package com.example.customer.controller;
 
-import com.ctrip.framework.apollo.Config;
-import com.ctrip.framework.apollo.ConfigService;
+//import com.ctrip.framework.apollo.Config;
+//import com.ctrip.framework.apollo.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -23,7 +23,6 @@
 			<outputDirectory>config</outputDirectory>
 			<includes>
 				<include>app.properties</include>
-<!--				<include>application-github.properties</include>-->
 			</includes>
 			<lineEnding>unix</lineEnding>
 		</fileSet>
@@ -31,7 +30,7 @@
 			<directory>src/main/config</directory>
 			<outputDirectory>/</outputDirectory>
 			<includes>
-				<include>server-registry-eureka.conf</include>
+				<include>spring-boot-admin.conf</include>
 			</includes>
 			<lineEnding>unix</lineEnding>
 		</fileSet>

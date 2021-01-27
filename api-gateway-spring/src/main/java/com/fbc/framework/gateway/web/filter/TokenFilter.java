@@ -31,7 +31,7 @@ public class TokenFilter implements GlobalFilter, Ordered {
         ServerHttpRequest request = exchange.getRequest();
         MultiValueMap<String, String> queryParams = request.getQueryParams();
         String username = queryParams.getFirst("username");
-        if (!username.equals("admin")) {
+        if (false) {
 
             //不允许访问，禁止访问
             ServerHttpResponse response = exchange.getResponse();

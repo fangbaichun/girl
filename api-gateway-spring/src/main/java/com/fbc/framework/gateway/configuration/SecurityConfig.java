@@ -30,7 +30,7 @@ public class SecurityConfig {
         UserDetails user = User.withDefaultPasswordEncoder()
                 .username("admin")
                 .password("123456")
-                .roles("ADMIN")
+                .roles("ADMIN","aaa")
                 .build();
         return new MapReactiveUserDetailsService(user);
     }
@@ -43,13 +43,13 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
         http
-                .authorizeExchange()
-                .pathMatchers("/order/**").hasAuthority("aaa")
-                .pathMatchers("/user/**").hasRole("ADMIN")
-                .anyExchange().authenticated()
-                .and()
-                .httpBasic().and()
-                .formLogin();
+            .authorizeExchange()
+            .pathMatchers("/order/**").hasAuthority("aaa")
+            .pathMatchers("/user/**").hasRole("ADMIN")
+            .anyExchange().authenticated()
+            .and()
+            .httpBasic().and()
+            .formLogin();
         return http.build();
     }
 }

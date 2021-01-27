@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: Api-Spring-Gateway
+  boot:
+    admin:
+      client:
+        url: http://10.19.83.64:8769
   cloud:
     gateway:
       routes:
@@ -20,7 +24,7 @@ CUSTOMER:
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.1.128:8761/eureka/,http://192.168.1.129:8761/eureka/
+      defaultZone: http://10.19.83.64:8761/eureka/,http://10.19.83.64:8762/eureka/
     # 开启健康检查
     healthcheck:
       enabled: true
