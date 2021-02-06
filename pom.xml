@@ -24,6 +24,8 @@
         <module>api-gateway-spring</module>
         <module>customer</module>
         <module>provider</module>
+        <module>ihrm-entity</module>
+        <module>ihrm-company</module>
     </modules>
     <properties>
         <package.environment>github</package.environment>

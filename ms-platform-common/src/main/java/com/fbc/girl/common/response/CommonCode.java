@@ -35,7 +35,11 @@ public enum CommonCode implements ResultCode{
     /**
      * 系统错误
      */
-    SERVER_ERROR(false,99999,"抱歉，系统繁忙，请稍后重试！");
+    SERVER_ERROR(false,99999,"抱歉，系统繁忙，请稍后重试！"),
+    /**
+     * 未知错误
+     */
+    UNKNOW_ERROR(false,77777,"未知错误，请联系开发人员！");
 //    private static ImmutableMap<Integer, CommonCode> codes ;
 
     /**

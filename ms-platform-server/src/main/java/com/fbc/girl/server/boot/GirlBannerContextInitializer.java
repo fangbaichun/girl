@@ -1,6 +1,7 @@
 package com.fbc.girl.server.boot;
 
 import cn.hutool.system.SystemUtil;
+import lombok.NoArgsConstructor;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -11,9 +12,8 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @Date 2020/6/8 20:02
  * @Version 1.0
  */
+@NoArgsConstructor
 public class GirlBannerContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-    public GirlBannerContextInitializer() {
-    }
 
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {

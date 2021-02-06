@@ -1,5 +1,5 @@
 app:
-  id: 1000030002
+  id: 1000130001
 # set apollo meta server address, adjust to actual address if necessary
 #apollo:
 #  meta: http://10.19.83.64:8080/
@@ -8,15 +8,27 @@ app:
 #      namespaces: application
 # 服务器配置
 server:
-  port: 30002
+  port: 30001
 # Spring相关配置
 spring:
   application:
-    name: provider
+    name: ihrm-company
   boot:
     admin:
       client:
         url: http://10.19.83.64:8769
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.19.83.64:13306/ihrm?useUnicode=true&characterEncoding=utf8
+    username: root
+    password:
+  jpa:
+    database: MySQL
+    show-sql: true
+    open-in-view: true
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
 eureka:
   client:
     service-url:

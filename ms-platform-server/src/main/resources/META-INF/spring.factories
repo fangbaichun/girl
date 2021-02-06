@@ -1,2 +1,2 @@
 org.springframework.context.ApplicationContextInitializer=\
-com.fbc.girl.server.boot.GirlBannerContextInitializer
+com.fbc.girl.server.boot.GirlBannerContextInitializer,com.fbc.girl.server.boot.SnowflakeIdWorkerInitializer

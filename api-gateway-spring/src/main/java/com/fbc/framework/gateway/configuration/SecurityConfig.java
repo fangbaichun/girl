@@ -46,10 +46,11 @@ public class SecurityConfig {
             .authorizeExchange()
             .pathMatchers("/order/**").hasAuthority("aaa")
             .pathMatchers("/user/**").hasRole("ADMIN")
+            .pathMatchers("/css/**","/js/**","html/**").permitAll()
             .anyExchange().authenticated()
-            .and()
-            .httpBasic().and()
-            .formLogin();
+            .and().httpBasic()
+            .and().formLogin()
+            .and().csrf();
         return http.build();
     }
 }

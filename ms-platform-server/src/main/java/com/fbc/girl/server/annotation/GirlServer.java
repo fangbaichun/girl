@@ -3,6 +3,7 @@ package com.fbc.girl.server.annotation;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.lang.annotation.*;
 
@@ -20,5 +21,7 @@ import java.lang.annotation.*;
 @SpringBootApplication
 @EnableDiscoveryClient
 @ServletComponentScan
+@ComponentScan //扫描本项目包
+@ComponentScan("com.fbc.girl.server.exception") //扫描全局异常处理包
 public @interface GirlServer {
 }

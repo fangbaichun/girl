@@ -9,15 +9,29 @@ spring:
         url: http://10.19.83.64:8769
   cloud:
     gateway:
+      #全局跨域请求配置
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origins: "*"
+            allowed-headers: "*"
+            allow-credentials: true
+            allowed-methods:
+            - GET
+            - POST
+            - DELETE
+            - PUT
+            - OPTION
       routes:
       - id: my_route
+        uri: https://www.baidu.com
         predicates:
-        - Path=/customer/**
-        uri: lb://CUSTOMER
-        filters:
+        - Path=/baidu
+#        uri: lb://CUSTOMER
+#        filters:
 #        - StripPrefix: 1
-CUSTOMER:
-  ribbon:
+#CUSTOMER:
+#  ribbon:
 #   配置负载均衡策略为随机访问
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 #eureka注册
