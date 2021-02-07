@@ -20,13 +20,13 @@ public class Department {
     @Id
     private String id;
     /**
-     * 父级ID
-     */
-    private String pid;
-    /**
      * 企业ID
      */
     private String companyId;
+    /**
+     * 父级ID
+     */
+    private String parentId;
     /**
      * 部门名称
      */
@@ -36,6 +36,10 @@ public class Department {
      */
     private String code;
     /**
+     * 部门类别
+     */
+    private String category;
+    /**
      * 负责人ID
      */
     private String managerId;
@@ -43,6 +47,10 @@ public class Department {
      * 负责人名称
      */
     private String manager;
+    /**
+     * 城市
+     */
+    private String city;
     /**
      * 介绍
      */

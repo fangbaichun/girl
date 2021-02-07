@@ -13,7 +13,7 @@ import lombok.ToString;
 @Data
 @ToString
 @AllArgsConstructor
-public class ResultData<T> {
+public class ResultPage<T> {
 
     /**
      * 单个对象
@@ -24,7 +24,7 @@ public class ResultData<T> {
      */
     private long total;
 
-    public ResultData(T data) {
+    public ResultPage(T data) {
         this.data = data;
     }
 

@@ -26,6 +26,7 @@
         <module>provider</module>
         <module>ihrm-entity</module>
         <module>ihrm-company</module>
+        <module>ihrm-system</module>
     </modules>
     <properties>
         <package.environment>github</package.environment>

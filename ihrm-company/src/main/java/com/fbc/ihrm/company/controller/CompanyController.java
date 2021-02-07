@@ -1,11 +1,11 @@
 package com.fbc.ihrm.company.controller;
 
+import com.fbc.girl.common.pageable.PageArg;
 import com.fbc.girl.common.response.CommonCode;
 import com.fbc.girl.common.response.QueryResult;
 import com.fbc.girl.common.response.Result;
-import com.fbc.girl.common.response.ResultData;
 import com.fbc.ihrm.company.service.CompanyService;
-import com.fbc.ihrm.entity.Company;
+import com.fbc.ihrm.entity.company.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -57,7 +57,16 @@ public class CompanyController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public QueryResult findById(@PathVariable(name = "id") String id) throws Exception {
         Company company = companyService.findById(id);
-        return new QueryResult(CommonCode.SUCCESS,new ResultData(company));
+        return new QueryResult(CommonCode.SUCCESS,company);
+    }
+
+    /**
+     * 分页获取企业列表
+     */
+    @RequestMapping(value = "/page", method = RequestMethod.POST)
+    public QueryResult findPage(PageArg pageArg,Company company) throws Exception {
+        List<Company> companyList = companyService.findAll();
+        return new QueryResult(CommonCode.SUCCESS,companyList);
     }
 
     /**
@@ -66,6 +75,6 @@ public class CompanyController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public QueryResult findAll() throws Exception {
         List<Company> companyList = companyService.findAll();
-        return new QueryResult(CommonCode.SUCCESS,new ResultData(companyList));
+        return new QueryResult(CommonCode.SUCCESS,companyList);
     }
 }

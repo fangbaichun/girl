@@ -7,10 +7,10 @@ import lombok.ToString;
 @ToString
 public class QueryResult<T> extends Result {
 
-    private ResultData resultData;
+    private T result;
 
-    public QueryResult(ResultCode resultCode,ResultData resultData){
+    public QueryResult(ResultCode resultCode,T result){
         super(resultCode);
-        this.resultData = resultData;
+        this.result = result;
     }
 }

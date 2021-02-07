@@ -1,13 +1,14 @@
 package com.fbc.ihrm.company.controller;
 
+import cn.hutool.core.lang.tree.Tree;
+import cn.hutool.core.lang.tree.TreeUtil;
 import com.fbc.girl.common.response.CommonCode;
 import com.fbc.girl.common.response.QueryResult;
 import com.fbc.girl.common.response.Result;
-import com.fbc.girl.common.response.ResultData;
 import com.fbc.ihrm.company.model.DeptListResult;
 import com.fbc.ihrm.company.service.CompanyService;
 import com.fbc.ihrm.company.service.DepartmentService;
-import com.fbc.ihrm.entity.Company;
+import com.fbc.ihrm.entity.company.Company;
 import com.fbc.ihrm.entity.company.Department;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -61,7 +62,7 @@ public class DepartmentController extends BaseController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public QueryResult findById(@PathVariable(name = "id") String id) {
         Department department = departmentService.findById(id);
-        return new QueryResult(CommonCode.SUCCESS, new ResultData(department));
+        return new QueryResult(CommonCode.SUCCESS, department);
     }
 
     /**
@@ -71,6 +72,16 @@ public class DepartmentController extends BaseController {
     public QueryResult findAll() {
         Company company = companyService.findById(parseCompanyId());
         List<Department> list = departmentService.findAll(parseCompanyId());
-        return new QueryResult(CommonCode.SUCCESS, new ResultData(new DeptListResult(company, list)));
+        List<Tree<String>> treeNodes = TreeUtil.build(list, "0",
+                (treeNode, tree) -> {
+                    tree.setId(treeNode.getId());
+                    tree.setParentId(treeNode.getParentId());
+                    tree.setName(treeNode.getName());
+                    // 扩展属性 ...
+                    //负责人
+                    tree.putExtra("manager", treeNode.getManager());
+//                    tree.putExtra("other", new Object());
+                });
+        return new QueryResult(CommonCode.SUCCESS, new DeptListResult(company, treeNodes));
     }
 }

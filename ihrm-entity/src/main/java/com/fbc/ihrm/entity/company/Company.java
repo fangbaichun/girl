@@ -1,4 +1,4 @@
-package com.fbc.ihrm.entity;
+package com.fbc.ihrm.entity.company;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

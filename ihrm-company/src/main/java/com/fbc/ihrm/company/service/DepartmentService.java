@@ -34,7 +34,7 @@ public class DepartmentService extends BaseService<Department> {
     public void update(Department department) {
         Department sourceDepartment = departmentDao.findById(department.getId()).get();
         sourceDepartment.setName(department.getName());
-        sourceDepartment.setPid(department.getPid());
+        sourceDepartment.setParentId(department.getParentId());
         sourceDepartment.setManagerId(department.getManagerId());
         sourceDepartment.setIntroduce(department.getIntroduce());
         sourceDepartment.setManager(department.getManager());

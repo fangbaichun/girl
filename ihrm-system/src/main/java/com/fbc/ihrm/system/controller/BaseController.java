@@ -1,8 +1,5 @@
-package com.fbc.ihrm.company.controller;
+package com.fbc.ihrm.system.controller;
 
-import com.fbc.ihrm.company.dao.CompanyDao;
-import com.fbc.ihrm.company.service.CompanyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.servlet.http.HttpServletRequest;

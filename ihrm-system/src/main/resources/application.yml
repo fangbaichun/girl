@@ -1,5 +1,5 @@
 app:
-  id: 1000130001
+  id: 1000130002
 # set apollo meta server address, adjust to actual address if necessary
 #apollo:
 #  meta: http://10.19.83.64:8080/
@@ -8,11 +8,11 @@ app:
 #      namespaces: application
 # 服务器配置
 server:
-  port: 30001
+  port: 30002
 # Spring相关配置
 spring:
   application:
-    name: ihrm-company
+    name: ihrm-system
   boot:
     admin:
       client:
