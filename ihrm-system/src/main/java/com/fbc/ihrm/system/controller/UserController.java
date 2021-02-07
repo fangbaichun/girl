@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+//1.解决跨域
+@CrossOrigin
 @RestController
 @RequestMapping("/sys")
 public class UserController extends BaseController {
