@@ -1,9 +1,7 @@
 package com.fbc.ihrm.entity.system;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -11,7 +9,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "pe_role")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @SuppressWarnings("all")
@@ -38,7 +37,6 @@ public class Role {
     @JsonIgnore
     @ManyToMany(mappedBy = "roles")
     private Set<User> users = new HashSet<User>(0);//角色与用户  多对多
-    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "pe_role_permission",
             joinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")},

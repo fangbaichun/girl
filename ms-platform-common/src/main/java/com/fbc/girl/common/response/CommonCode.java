@@ -39,9 +39,17 @@ public enum CommonCode implements ResultCode{
     /**
      * 未知错误
      */
-    UNKNOW_ERROR(false,77777,"未知错误，请联系开发人员！");
+    UNKNOW_ERROR(false,77777,"未知错误，请联系开发人员！"),
 //    private static ImmutableMap<Integer, CommonCode> codes ;
-
+    /**
+     * 账号或密码错误
+     */
+    MOBILE_OR_PASSWORD_ERROR(false,10004,"账号或密码错误"),
+    /**
+     * token失效
+     */
+    TOKEN_EXPIRED(false,10005,"token已失效"),
+    USER_NOT_EXISTS(false,10006,"用户不存在");
     /**
      * 操作是否成功
      */

@@ -1,8 +1,6 @@
 package com.fbc.ihrm.entity.company;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,7 +9,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "co_department")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Department {

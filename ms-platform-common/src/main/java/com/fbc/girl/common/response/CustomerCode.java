@@ -31,6 +31,12 @@ public class CustomerCode implements ResultCode {
         this.message = message;
     }
 
+    public CustomerCode(String message) {
+        this.success = true;
+        this.code = 10000;
+        this.message = message;
+    }
+
     public CustomerCode(boolean success,String message){
         this.success = success;
         if (success) {

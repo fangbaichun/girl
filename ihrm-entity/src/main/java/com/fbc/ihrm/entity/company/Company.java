@@ -1,8 +1,6 @@
 package com.fbc.ihrm.entity.company;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,7 +13,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name="co_company")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Company implements Serializable {

@@ -1,8 +1,6 @@
 package com.fbc.ihrm.entity.system;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -12,7 +10,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "pe_permission")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @DynamicInsert

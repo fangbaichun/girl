@@ -1,9 +1,7 @@
 package com.fbc.ihrm.entity.system;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,7 +10,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "bs_user")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @SuppressWarnings("all")
@@ -39,6 +38,10 @@ public class User {
      * 启用状态 0为禁用 1为启用
      */
     private Integer enableState;
+    /**
+     * 用户等级 user：普通用户，admin：管理员
+     */
+    private String level;
     /**
      * 创建时间
      */
@@ -79,7 +82,6 @@ public class User {
     private Integer inServiceStatus;
     private String departmentName;
     @ManyToMany
-    @JsonIgnore
     @JoinTable(name = "pe_user_role", joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")}
     )

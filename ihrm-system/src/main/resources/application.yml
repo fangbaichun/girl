@@ -1,5 +1,12 @@
 app:
   id: 1000130002
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
 # set apollo meta server address, adjust to actual address if necessary
 #apollo:
 #  meta: http://10.19.83.64:8080/
@@ -26,9 +33,6 @@ spring:
     database: MySQL
     show-sql: true
     open-in-view: true
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
   devtools:
     restart:
       enabled: true  #设置开启热部署
@@ -38,10 +42,3 @@ eureka:
       defaultZone: http://10.19.83.64:8761/eureka/,http://10.19.83.64:8762/eureka/
   instance:
     prefer-ip-address: true
-info:
-  app:
-    name: @project.artifactId@
-    encoding: @project.build.sourceEncoding@
-    java:
-      source: @java.version@
-      target: @java.version@

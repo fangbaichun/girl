@@ -22,6 +22,6 @@ import java.lang.annotation.*;
 @EnableDiscoveryClient
 @ServletComponentScan
 @ComponentScan //扫描本项目包
-@ComponentScan("com.fbc.girl.server.exception") //扫描全局异常处理包
+@ComponentScan( basePackages = {"com.fbc.girl.server.exception","com.fbc.girl.server.converter"}) //扫描全局异常处理包
 public @interface GirlServer {
 }

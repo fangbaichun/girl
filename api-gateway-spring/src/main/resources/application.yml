@@ -1,66 +1,9 @@
-server:
-  port: 8080
-spring:
-  application:
-    name: Api-Spring-Gateway
-  boot:
-    admin:
-      client:
-        url: http://10.19.83.64:8769
-  cloud:
-    gateway:
-      #全局跨域请求配置
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowed-origins: "*"
-            allowed-headers: "*"
-            allow-credentials: true
-            allowed-methods:
-            - GET
-            - POST
-            - DELETE
-            - PUT
-            - OPTION
-      routes:
-      - id: my_route
-        uri: https://www.baidu.com
-        predicates:
-        - Path=/baidu
-#        uri: lb://CUSTOMER
-#        filters:
-#        - StripPrefix: 1
-#CUSTOMER:
-#  ribbon:
-#   配置负载均衡策略为随机访问
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-#eureka注册
-eureka:
-  client:
-    service-url:
-      defaultZone: http://10.19.83.64:8761/eureka/,http://10.19.83.64:8762/eureka/
-    # 开启健康检查
-    healthcheck:
-      enabled: true
-  instance:
-    prefer-ip-address: true
-    # 续约更新时间间隔 (默认30秒)
-    lease-renewal-interval-in-seconds: 3
-    # 续约到期时间（默认90秒）
-    lease-expiration-duration-in-seconds: 9
-# actuator健康检查
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  endpoint:
-    health:
-      show-details: ALWAYS
-info:
-  app:
-    name: @project.artifactId@
-    encoding: @project.build.sourceEncoding@
-    java:
-      source: @java.version@
-      target: @java.version@
+###---------所有配置已由apollo接管---------###
+app:
+  id: 1000031000
+# set apollo meta server address, adjust to actual address if necessary
+apollo:
+  meta: http://10.19.83.64:8861
+  bootstrap:
+    enabled: true
+    namespaces: application

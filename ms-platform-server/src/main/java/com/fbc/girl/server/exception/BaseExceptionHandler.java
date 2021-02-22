@@ -20,10 +20,10 @@ public class BaseExceptionHandler {
         e.printStackTrace();
         if (e.getClass() == BusinessException.class) {
             BusinessException be = (BusinessException) e;
-            return Result.FAIL();
+            return new Result(be.getResultCode());
         } else if (e.getClass() == SystemException.class) {
             SystemException se = (SystemException) e;
-            return new Result(CommonCode.SERVER_ERROR);
+            return new Result(se.getResultCode());
         }
         return new Result(CommonCode.UNKNOW_ERROR);
     }

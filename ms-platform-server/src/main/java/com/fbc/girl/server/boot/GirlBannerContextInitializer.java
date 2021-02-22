@@ -19,7 +19,6 @@ public class GirlBannerContextInitializer implements ApplicationContextInitializ
     public void initialize(ConfigurableApplicationContext applicationContext) {
         String name = applicationContext.getClass().getName();
         if (name.endsWith("AnnotationConfigServletWebServerApplication") || name.endsWith("AnnotationConfigReactiveWebServerApplicationContext")) {
-
         }
     }
 

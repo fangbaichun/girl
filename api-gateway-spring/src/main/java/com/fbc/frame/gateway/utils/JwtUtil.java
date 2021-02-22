@@ -1,10 +1,8 @@
-package com.fbc.ihrm.system.utils;
+package com.fbc.frame.gateway.utils;
 
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtBuilder;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import com.fbc.girl.common.response.CommonCode;
+import io.jsonwebtoken.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -14,8 +12,9 @@ import java.util.Map;
 
 @Getter
 @Setter
+@SuppressWarnings("all")
 @ConfigurationProperties("jwt.config")
-public class JwtUtils {
+public class JwtUtil {
     //签名私钥
     private String key;
     //签名的失效时间
@@ -49,8 +48,21 @@ public class JwtUtils {
     /**
      * 解析token字符串获取clamis
      */
-    public Claims parseJwt(String token) {
-        Claims claims = Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
+    public Claims parseJwt(String token) throws Exception {
+        Claims claims = null;
+        try {
+            claims = Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
+        } catch (ExpiredJwtException e) {
+            throw new RuntimeException(CommonCode.TOKEN_EXPIRED.message());
+        } catch (UnsupportedJwtException e) {
+            e.printStackTrace();
+        } catch (MalformedJwtException e) {
+            e.printStackTrace();
+        } catch (SignatureException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
         return claims;
     }
 

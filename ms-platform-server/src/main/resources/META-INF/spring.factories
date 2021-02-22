@@ -1,2 +1,8 @@
+# 上下文初始化时初始化一下组件
+# 1、banner组件
+# 2、全局雪花Id生成器
 org.springframework.context.ApplicationContextInitializer=\
 com.fbc.girl.server.boot.GirlBannerContextInitializer,com.fbc.girl.server.boot.SnowflakeIdWorkerInitializer
+# 全局时间转换器配置
+org.springframework.web.servlet.config.annotation.WebMvcConfigurer=\
+com.fbc.girl.server.converter.WebMvcConfig
